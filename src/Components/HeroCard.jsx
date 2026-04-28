@@ -1,15 +1,15 @@
 import React from 'react'
 
-const HeroCard = () => {
+const HeroCard = ( {image, title, ratings, release} ) => {
   return (
     <>
         <section className='hero-card'>
-            <div>
-                <img src="" alt="" />
+            <div className='hero-img-div'>
+                <img src={image} alt="image" />
             </div>
-            <div>
-                <h3></h3>
-                <p></p>
+            <div className='hero-text'>
+                <h3>{title}</h3>
+                <p>⭐{ratings} <small className='trending'>trending</small></p>
             </div>
         </section>
       
