@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import hero from '../assets/heroimage.png'
 import search from '../assets/search_icon.svg'
 import HeroCard from '../Components/HeroCard'
+import load from '../assets/loading-svg.svg'
 
 const Browse = () => {
   const [query, setQuery] = useState("")
@@ -46,7 +47,7 @@ const Browse = () => {
         <img src={hero} alt="hero-image"  className='hero-image'/>
         <div className='call-to-action'>
           <h1>DISCOVER MOVIES YOU'LL LOVE</h1>
-          <p>Explore thousands of blockbuster, indie movies and hidden gems. <br /> Your next cinematic adventure starts here</p>
+          <p>Explore thousands of blockbusters, indie movies and hidden gems. <br /> Your next cinematic adventure starts here</p>
           <div className='hero-btns'>
             <button className='explore'>EXPLORE NOW</button>
             <button className='watchlist'>Add to watchlist</button>
@@ -55,7 +56,7 @@ const Browse = () => {
           <div className='trends'>
           
 
-          {loading && <p>Loading...</p>}
+          {loading && <img src={load} alt='loading image' className='load-img'/>}
 
           <div className="mov">
             {movieData?.results?.map((movie) => (
@@ -72,7 +73,7 @@ const Browse = () => {
 
 
           <div className='search-query'>
-            <input type="text" value={query} onChange={(e) => setQuery(e.target.value)} className='query' placeholder='Search foe movies, actors, genres...'/>
+            <input type="text" value={query} onChange={(e) => setQuery(e.target.value)} className='query' placeholder='Search for movies, actors, genres...'/>
             <div className='search-wrapper'>
               <img src={search} alt="search-logo"className='search-icon' />
             </div>
