@@ -10,7 +10,7 @@
 
 
 .dark{
-  background: black;
+  background: rgba(2, 6, 23, 0.95);
   color: white;
 
 }
@@ -165,7 +165,7 @@
 .hero-section{
   position: relative;
   max-width: 1400px;
-  margin: 0 auto 40px auto;
+  margin: 0 auto auto auto;
   height: 100vh;
 }
 
@@ -352,7 +352,7 @@
 }
 
 .load-img{
-  width: 50px;
+  width: 20px;
 }
 
 @media(max-width: 480px){
@@ -366,7 +366,17 @@
   width: 320px;
   cursor: pointer;
   margin: 15px auto;
+  transition: transform 0.3s ease;
+  border-radius: 8px;
+  position: relative;
 }
+
+.movie-info{
+  
+  padding: 8px;
+  margin-top: 10px;
+}
+
 
 .thumbnail {
   position: relative;
@@ -380,11 +390,34 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
 }
 
-.movie-card:hover img {
+.movie-card:hover {
   transform: scale(1.05);
+  
+}
+
+.dots-btn{
+  width: 20px;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  transition: all 0.15s ease-in-out;
+  border-radius: 4px;
+}
+
+.dots-btn:hover{
+  opacity: 0.8;
+}
+
+.dots-btn:active{
+  opacity: 0.4;
+}
+
+.dots{
+  width: 100%;
+  cursor: pointer;
+  
 }
 
 .duration {
@@ -395,10 +428,6 @@
   padding: 3px 6px;
   font-size: 12px;
   border-radius: 4px;
-}
-
-.movie-info {
-  margin-top: 10px;
 }
 
 .title {
@@ -414,11 +443,42 @@
   margin-top: 4px;
 }
 
+.pop-up-btns{
+  width: 150px;
+  padding: 20px 10px;
+  height: auto;
+  background: #CBD5E1;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  position: absolute;
+  top: 40px;
+  left: 20px;
+  border-radius: 10px;
+
+}
+
+.pop-up-btns li{
+  border: none;
+  cursor: pointer;
+  list-style: none;
+  padding: 4px;
+  color: black;
+}
+
+.pop-up-btns li:hover{
+  background: rgba(2, 6, 23, 0.95);
+  color: #CBD5E1;
+}
+
+
+
 
 .searched-movies{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   place-items: center;
+  padding-top: 40px;
 }
 
 .modal-overlay {
@@ -438,18 +498,15 @@
   display: flex;
   gap: 30px;
   min-width: 1200px;
-  background: rgba(2, 6, 23, 0.85);
+  background: rgba(2, 6, 23, 0.85) ;
   color: white;
   padding: 20px;
   border-radius: 12px;
-  max-width: 400px;
   width: 90%;
   overflow-y: scroll;
 }
 
-.modal-content:hover{
-  transform: scale(1.04);
-}
+
 
 .modal-img-wrapper{
   width: 30%;
@@ -484,4 +541,18 @@
   border: none;
   border-radius: 12px;
   cursor: pointer;
+  transition: all ease 0.15s;
+}
+
+.modal-btn:hover{
+  transform: scale(1.05);
+}
+
+.footer{
+  width: 100%;
+ display: flex;
+ justify-content: center;
+  padding: 20px;
+  background: rgba(2, 6, 23, 0.95);
+  color: #CBD5E1;
 }
