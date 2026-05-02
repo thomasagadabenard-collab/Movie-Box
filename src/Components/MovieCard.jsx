@@ -24,9 +24,9 @@ const MovieCard = ( { image, duration, title, release } ) => {
 
             </div>
 
-            {openPop && <Addpopopup /> }
+            {openPop && <Addpopopup /> } 
 
-            <div className="movie-info">
+            <div className="movie-info" onClick={popFn}>
                 <h3 className="title">{title}</h3>
                 <p className="release-date">{release}</p>
             </div>
