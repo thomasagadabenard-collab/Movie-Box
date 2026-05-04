@@ -133,21 +133,25 @@ const Browse = () => {
               />
             </div>
           ))}
-        </div>
+          </div>
 
-        {modalOpen && selectedMovie && (
-            <Modal
-              image={
-                selectedMovie.poster_path
-                  ? `https://image.tmdb.org/t/p/w500${selectedMovie.poster_path}`
-                  : "https://via.placeholder.com/400x220"
-              }
-              overview={selectedMovie.overview}
-              title={selectedMovie.title}
-              onClose={() => setModalOpen(false)}
-            />
-          )}
-      </section>
+          {modalOpen && selectedMovie && (
+              <Modal
+                image={
+                  selectedMovie.poster_path
+                    ? `https://image.tmdb.org/t/p/w500${selectedMovie.poster_path}`
+                    : "https://via.placeholder.com/400x220"
+                }
+                overview={selectedMovie.overview}
+                title={selectedMovie.title}
+                onClose={() => setModalOpen(false)}
+              />
+            )}
+        </section>
+
+        <section>
+          <h2 className='popular-header'>Popular</h2>
+        </section>
     </>
   )
 }

@@ -23,7 +23,7 @@ const NavBar = () => {
         <div className='navbar'>
           <div className='logo-links'>
             <div>
-              <Link to= "/" className='logo'>Cine-Box</Link>
+              <Link to= "/" className='logo'>Movie-Box</Link>
             </div>
             <div className='links'>
               <Link to = "/" className='link'>Browse</Link>

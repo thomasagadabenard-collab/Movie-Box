@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <>
         <footer className='footer'>
-            &copy; Cine-Box 2026
+            &copy; Movie-Box 2026
         </footer>
       
     </>
