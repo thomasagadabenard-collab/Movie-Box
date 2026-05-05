@@ -474,6 +474,10 @@
   color: #CBD5E1;
 }
 
+.pop-up-btns li:active{
+  opacity: 0.4;
+}
+
 
 
 
@@ -586,6 +590,13 @@
   margin-bottom: 30px;
   margin-left: 4rem;
   text-align: center;
+}
+
+.popular-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 20px;
+  place-items: center;
 }
 
 .footer{

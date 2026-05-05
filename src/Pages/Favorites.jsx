@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { MovieContext } from '../Components/MovieContext'
 
 const Favorites = () => {
+  const { favorites } = useContext(MovieContext)
   return (
     <div>
-        <h1>My Favorite page</h1>      
+      <h2>Favorites</h2>
+
+      {favorites.map((movie) => (
+        <p key={movie.id}>{movie.title}</p>
+      ))}
     </div>
   )
 }

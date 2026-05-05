@@ -5,6 +5,7 @@ import HeroCard from '../Components/HeroCard'
 import load from '../assets/loading-svg.svg'
 import MovieCard from '../Components/MovieCard'
 import Modal from '../Components/Modal'
+import PopularCard from '../Components/PopularCard'
 
 const Browse = () => {
   const [query, setQuery] = useState("")
@@ -16,6 +17,9 @@ const Browse = () => {
   const [searchMovie, setSearchMovie] = useState([])
   const [modalOpen, setModalOpen] = useState(false)
   const [selectedMovie, setSelectedMovie] = useState(null)
+  const [popular, setPopular] = useState([])
+  const [popularError, setPopularError] = useState(false)
+  const [popularLoading, setPopularLoading] = useState(false)
 
 
   const BASE_URL = "https://api.themoviedb.org/3";
@@ -66,6 +70,29 @@ const Browse = () => {
       }
       
     }
+
+    useEffect(() =>  {
+       const fetchPopular = async () => {
+
+        setPopularLoading(true)
+           try{
+              const res = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`)
+              if(!res.ok){
+                setPopularError(true)
+              }
+
+              const data = await res.json();
+              console.log(data);
+              setPopular(data.results)           
+
+            }catch (error){
+              setPopularError(true)              
+            } finally{
+              setPopularLoading(false)
+            }
+       }
+       fetchPopular()     
+    }, [])
 
   return (
     <>
@@ -151,6 +178,20 @@ const Browse = () => {
 
         <section>
           <h2 className='popular-header'>Popular</h2>
+
+          {popularLoading && <p>Loading...</p>}
+          {popularError && <p>Could not fetch movies... Try again</p>}
+
+         <div className='popular-grid'>
+           {popular && popular.map((pop) => (
+            <PopularCard 
+              key={pop.id}
+              title={pop.title}
+              image={`https://image.tmdb.org/t/p/w500${pop.poster_path}`}
+              date={pop.release_date}
+            />
+          ))}
+         </div>
         </section>
     </>
   )
