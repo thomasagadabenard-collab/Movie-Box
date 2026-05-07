@@ -4,13 +4,18 @@ import { MovieContext } from '../Components/MovieContext'
 const Favorites = () => {
   const { favorites } = useContext(MovieContext)
   return (
-    <div>
+    <>
+    <section className='favorite-page'>
       <h2>Favorites</h2>
 
-      {favorites.map((movie) => (
-        <p key={movie.id}>{movie.title}</p>
-      ))}
-    </div>
+      <div className='fav'>
+        {}
+        {favorites.map((movie) => (
+          <p key={movie.id}>{movie.title}</p>
+        ))}
+      </div>
+    </section>
+    </>
   )
 }
 

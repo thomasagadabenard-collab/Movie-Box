@@ -117,11 +117,11 @@ const Browse = () => {
             {movieData?.results?.map((movie) => (
               <HeroCard
                 key={movie.id}
-                title={movie.title}
+                title={movie.title} 
                 ratings={movie.vote_average}
                 release={movie.release_date}
-                image={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-              />
+                image={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
+              /> 
             ))}
           </div>
         </div>
@@ -137,7 +137,7 @@ const Browse = () => {
               <img src={search} alt="search-logo"className='search-icon' onClick={() => queryFn(query)}/>
             </div>
           </div>
-        </div>
+        </div> 
       </section>      
 
       <section className='search-movies-container'>

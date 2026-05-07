@@ -16,6 +16,8 @@
 
 }
 
+
+
 .light{
   background: #CBD5E1;
   max-width: 1400px;
@@ -599,6 +601,81 @@
   place-items: center;
 }
 
+.fav{
+  min-height: 100vh;
+}
+
+/*Genre*/
+.genre-hero{
+  min-height: 100vh;
+  color: black;
+  margin: 49px auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  padding-top: 2rem;
+}
+
+.genre-hero h2{
+  color: rgba(2, 6, 23, 0.95);
+  padding: 20px;
+  
+}
+
+.genre-flex{
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.flex-render{
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+  min-height: 100vh;
+}
+
+.genre-buttons{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: rgba(2, 6, 23, 0.85);
+  padding: 20px;
+  min-width: 150px;
+  width: 15%;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  
+}
+
+.genre-btn{
+  padding: 8px 35px;
+  color: #CBD5E1;
+  background: rgba(2, 6, 23, 0.95);
+  border: none;
+  cursor: pointer;
+  border-radius: 9px;
+}
+
+.genre-btn:hover{
+  opacity: 0.8;
+  transform: scale(1.02);
+}
+
+.genre-btn:active{
+  opacity: 0.4;
+}
+
+.genre-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 10px;
+  width: 100%;
+}
+
 .footer{
   width: 100%;
  display: flex;
@@ -606,5 +683,4 @@
   padding: 20px;
   background: rgba(2, 6, 23, 0.95);
   color: #CBD5E1;
-  margin-top: 2rem;
 }
