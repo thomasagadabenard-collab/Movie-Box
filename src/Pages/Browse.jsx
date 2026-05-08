@@ -149,6 +149,7 @@ const Browse = () => {
                 setModalOpen(true);
               }}>
               <MovieCard
+                id={movie.id}
                 image={
                     movie.poster_path
                       ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
@@ -176,7 +177,7 @@ const Browse = () => {
             )}
         </section>
 
-        <section>
+        <section className='popular'> 
           <h2 className='popular-header'>Popular</h2>
 
           {popularLoading && <p>Loading...</p>}

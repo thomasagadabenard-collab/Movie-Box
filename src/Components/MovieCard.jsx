@@ -3,7 +3,9 @@ import dots from '../assets/dots.png'
 import Addpopopup from './Addpopopup'
 import { MovieContext } from './MovieContext'
 
-const MovieCard = ( { image, duration, title, release } ) => {
+const MovieCard = ( {id, image, duration, title, release } ) => {
+
+    
 
     const [openPop, setPop] = useState(false)
 
@@ -29,8 +31,8 @@ const MovieCard = ( { image, duration, title, release } ) => {
             {openPop && (
                 <Addpopopup
                     movie={{ image, title, release }}
-                    onAddFavorite={() => addFavorite({ image, title, release })}
-                    onAddWatchlist={() => addWatchlist({ image, title, release })}
+                    onAddFavorite={() => addFavorite({id, image, title, release })}
+                    onAddWatchlist={() => addWatchlist({id, image, title, release })}
                 />
                 )}
 

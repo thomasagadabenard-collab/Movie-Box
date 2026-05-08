@@ -85,17 +85,21 @@ const Genre = () => {
               
               <div className="genre-grid">
                 {genreMovies.map((movie) => (
-                  <MovieCard
-                    key={movie.id}
-                    image={
-                      movie.poster_path
-                        ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-                        : "https://via.placeholder.com/400x220"
-                    }
-                    title={movie.title}
-                    release={movie.release_date}
-                    duration="N/A"
-                  />
+                  <div className="genre-card" key={movie.id}>
+                    <img
+                      src={
+                        movie.poster_path
+                          ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+                          : "https://via.placeholder.com/400x220"
+                      }
+                      alt={movie.title}
+                    />
+
+                    <div className="genre-info">
+                      <h3>{movie.title}</h3>
+                      <p>{movie.release_date}</p>
+                    </div>
+                  </div>
                 ))}
               </div>
             </div>

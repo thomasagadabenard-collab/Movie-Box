@@ -7,6 +7,7 @@ export const MovieProvider = ({ children }) => {
   const [watchlist, setWatchlist] = useState([]);
 
   const addFavorite = (movie) => {
+     console.log(movie)
     setFavorites((prev) => {
       if (prev.some((m) => m.id === movie.id)) return prev;
       return [...prev, movie];
