@@ -507,7 +507,8 @@
 .modal-content {
   display: flex;
   gap: 30px;
-  min-width: 1200px;
+  min-width: 90%;
+  width: 1200px;
   background: rgba(2, 6, 23, 0.85) ;
   color: white;
   padding: 20px;
@@ -557,6 +558,22 @@
 .modal-btn:hover{
   transform: scale(1.05);
 }
+
+@media(max-width: 500px){
+  .modal-content{
+    flex-direction: column;
+    padding: 20px 0;
+    overflow-y: scroll;
+  }
+  .modal-img-wrapper{
+    width: 100px;
+    margin: 5px auto;
+  }
+  .modal-img-wrapper img{
+    width: 100%;
+  }
+}
+
 
 .popular{
   padding-bottom: 10px;
@@ -610,6 +627,7 @@
   padding: 20px;
   gap: 20px;
   place-items: center;
+  cursor: pointer;
 }
 
 .fav{
@@ -761,6 +779,7 @@
 .watchlist-info h3 {
   font-size: 16px;
   margin-bottom: 5px;
+  color: #CBD5E1;
 }
 
 .favorite-info p,
