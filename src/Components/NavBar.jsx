@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import x from '../assets/x.png'
+import remove from '../assets/x.png'
 
 const NavBar = () => {
-  const [dark, setDark] = useState(false)
+  const [dark, setDark] = useState(() => {
+    return localStorage.getItem("toggle") === "dark"
+  })
   const [ham, setHam] = useState(false)
 
   const toggleTheme = () => {
@@ -15,8 +17,12 @@ const NavBar = () => {
   }
 
   useEffect(() => {
-    document.body.className = dark ? "dark" : "light"
+    const theme = dark ? "dark" : "light"
+    document.body.className = theme
+    localStorage.setItem("toggle", theme)
   }, [dark])
+
+
 
   return (
     <>
@@ -25,25 +31,25 @@ const NavBar = () => {
             <div>
               <Link to= "/" className='logo'>Movie-Box</Link>
             </div>
+
             <div className='links'>
               <Link to = "/" className='link'>Browse</Link>
               <Link to = "/watchlist" className='link'>Watchlist</Link>
               <Link to = "/genre" className='link'>Genre</Link>
               <Link to = "/favorites" className='link'>Favorites</Link>
             </div>
-            <div className={ham ? "small-links-active" : "small-links"}>
-              <div className="small-links-flex">
-                <Link to = "/" className='link'>Browse</Link>
+          </div>
+
+          <div className={ham ? "small-links-active" : "small-links"}>
+              <Link to = "/" className='link'>Browse</Link>
                 <Link to = "/watchlist" className='link'>Watchlist</Link>
                 <Link to = "/genre" className='link'>Genre</Link>
                 <Link to = "/favorites" className='link'>Favorites</Link>
-                 <div className='cancel'>
-                  <img src={x} alt="cancle" />
-                  </div>
-              </div>
-             
+                <div className='cancel' onClick={hamburgerFn}>
+                  < img src={remove} alt="cancle" />
+                </div>
             </div>
-          </div>
+
           <div className='sm-ham'>
             <div className='sun-moon' onClick={toggleTheme}>
               {dark ? '☀️' : '࣪🌙' }

@@ -31,8 +31,15 @@ const MovieCard = ( {id, image, duration, title, release } ) => {
             {openPop && (
                 <Addpopopup
                     movie={{ image, title, release }}
-                    onAddFavorite={() => addFavorite({id, image, title, release })}
-                    onAddWatchlist={() => addWatchlist({id, image, title, release })}
+                    onAddFavorite={() => {
+                        addFavorite({id, image, title, release })
+                        popFn()
+                    }}
+                    onAddWatchlist={() => {
+                        addWatchlist({id, image, title, release })
+                        popFn()
+                    }}
+                    
                 />
                 )}
 

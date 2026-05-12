@@ -23,7 +23,9 @@
   max-width: 1400px;
 }
 
-.navbar{
+/*Navabar*/
+
+.navbar {
   display: flex;
   position: fixed;
   width: 100%;
@@ -31,38 +33,35 @@
   justify-content: space-between;
   padding: 20px 40px;
   background: rgba(2, 6, 23, 0.85);
-  -webkit-backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   place-items: center;
   z-index: 50;
   max-width: 1400px;
-  
 }
 
-.logo-links{
+.logo-links {
   display: flex;
   gap: 90px;
   place-items: center;
 }
-
-.links{
+.links {
   display: flex;
   gap: 20px;
-  text-decoration: none;
-  
 }
 
-.link{
+.link {
   text-decoration: none;
   color: #CBD5E1;
+  cursor: pointer;
 }
 
-.link:hover{
+.link:hover {
   color: #FBBF24;
 }
 
-.logo{
+.logo {
   font-size: 2rem;
   font-weight: 900;
   text-decoration: none;
@@ -70,99 +69,116 @@
   color: #FBBF24;
 }
 
-.sun-moon{
+.sun-moon {
   cursor: pointer;
   transition: opacity 0.12s ease;
 }
 
-.sun-moon:hover{
+.sun-moon:hover {
   opacity: 0.8;
 }
 
-.sun-moon:active{
-  opacity: 0.4;
-}
-
-.ham-span{
-  width: 32px;
-  height: 4px;
-  background: #CBD5E1;
-  display: none;
-  flex-direction: column;
-  margin-bottom: 4px;
-  
-}
-
-.hamburger{
-  cursor: pointer;
-}
-
-.hamburger:active{
+.sun-moon:active {
   opacity: 0.4;
 }
 
 .sm-ham{
   display: flex;
-  gap: 5px;
-  align-items: flex-end;
   place-items: center;
+  gap: 4px;
 }
 
-
-.small-links, .small-links-active{
+.hamburger {
+  cursor: pointer;
   display: none;
+  flex-direction: column;
+  gap: 4px;
 }
 
-@media(max-width: 780px){
-  .links{
+.hamburger:active {
+  opacity: 0.4;
+}
+
+.ham-span {
+  width: 26px;
+  height: 4px;
+  background: #CBD5E1;
+  display: block;
+  border-radius: 2px;
+}
+
+.small-links-active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 70%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: rgba(2, 6, 23, 0.95);
+  transition: left 0.3s ease;
+  z-index: 100;
+  place-items: center;
+  padding-top: 150px;
+}
+
+.small-links {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 70%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: rgba(2, 6, 23, 0.95);
+  z-index: 100;
+  place-items: center;
+  padding-top: 150px;
+  transition: left 0.3s ease;
+}
+
+.cancel{
+  width: 30px;
+  position: absolute;
+  top: 40px;
+  right: 20px;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50%;
+}
+
+.cancel:hover{
+  transform: translateY(-5px);
+  background: #CBD5E1;
+}
+
+.cancel:active{
+  opacity: 0.4;
+}
+
+.cancel img{
+  width: 100%;
+}
+
+
+@media (max-width: 780px) {
+  .links {
     display: none;
   }
-  .ham-span{
+
+  .hamburger {
     display: flex;
-  }
-
-  .small-links {
-    left: -100%;
-  }
-
-  .small-links-active {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 70%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background: rgba(2, 6, 23, 0.95);
-    transition: left 0.3s ease;
-    z-index: 100; 
-  }
-
-  .small-links-active .link{
-    cursor: pointer;
-  }
- 
-
-  .small-links-flex{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 50% auto;
-  }
-
-  .small-links-flex > * {
-    padding: 10px;
-    font-size: 1.4rem;
-  }
-
-  .cancel{
-    position: absolute;
-    top: 0;
-    right: 20px;
   }
 }
 
+@media (min-width: 780px) {
+  .small-links,
+  .small-links-active {
+    display: none;
+  }
+}
 
 
 /*Hero Section*/
@@ -368,6 +384,8 @@
 }
 
 
+/*MovieCard*/
+
 .movie-card {
   width: 320px;
   cursor: pointer;
@@ -491,6 +509,8 @@
   padding-top: 40px;
 }
 
+/*Modal*/
+
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -561,19 +581,17 @@
 
 @media(max-width: 500px){
   .modal-content{
-    flex-direction: column;
+    
     padding: 20px 0;
     overflow-y: scroll;
   }
-  .modal-img-wrapper{
-    width: 100px;
-    margin: 5px auto;
-  }
+
   .modal-img-wrapper img{
-    width: 100%;
+    margin-left: 9px;
   }
 }
 
+/*Popular*/
 
 .popular{
   padding-bottom: 10px;
@@ -637,7 +655,6 @@
 /*Genre*/
 .genre-hero{
   min-height: 100vh;
-  color: black;
   margin: 49px auto 0 auto;
   display: flex;
   flex-direction: column;
@@ -646,7 +663,6 @@
 }
 
 .genre-hero h2{
-  color: rgba(2, 6, 23, 0.95);
   padding: 20px;
   
 }

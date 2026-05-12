@@ -28,9 +28,8 @@ const Browse = () => {
   const BASE_URL = "https://api.themoviedb.org/3"
   const API_KEY = import.meta.env.VITE_TMDB_API_KEY
 
-  // =========================
   // FETCH TRENDING MOVIES
-  // =========================
+
   useEffect(() => {
     const fetchTrendingMovies = async () => {
       setTrendingLoading(true)
@@ -58,9 +57,8 @@ const Browse = () => {
     fetchTrendingMovies()
   }, [])
 
-  // =========================
   // FETCH POPULAR MOVIES
-  // =========================
+
   useEffect(() => {
     const fetchPopularMovies = async () => {
       setPopularLoading(true)
@@ -88,9 +86,8 @@ const Browse = () => {
     fetchPopularMovies()
   }, [])
 
-  // =========================
   // SEARCH MOVIES
-  // =========================
+
   const queryFn = async () => {
     if (query.trim() === "") return
 
@@ -118,9 +115,8 @@ const Browse = () => {
     }
   }
 
-  // =========================
   // OPEN MODAL
-  // =========================
+
   const openModal = (movie) => {
     setSelectedMovie(movie)
     setModalOpen(true)

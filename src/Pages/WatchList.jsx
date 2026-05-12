@@ -5,7 +5,7 @@ const WatchList = () => {
   const { watchlist, removeWatchlist } =
     useContext(MovieContext)
 
-  return (
+  return ( 
     <div className='watchlist-wrapper'>
       <h1>Watchlist</h1>
 
