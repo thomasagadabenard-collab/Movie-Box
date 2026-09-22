@@ -274,7 +274,7 @@
 
 .search-query{
   position: relative;
-  width: clamp(400px, 60%, 480px);;
+  width: clamp(370px, 60%, 480px);;
   margin: auto;
 }
 
